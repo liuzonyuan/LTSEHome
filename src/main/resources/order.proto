@@ -1,0 +1,19 @@
+syntax = "proto2";
+
+package protobuf;
+option java_package = "com.ltse.protobuf";
+
+message Order {
+    required int64 timestamp = 1;
+    required string broker = 2;
+    required int64 id = 3;
+    optional string type = 4;
+    optional string symbol = 5;
+    optional int32 quantity = 6;
+    optional double price = 7;
+    enum sideType {
+        Buy = 0;
+        Sell = 1;
+    }
+    optional sideType side = 8;
+}
